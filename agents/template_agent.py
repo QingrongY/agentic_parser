@@ -5,9 +5,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Iterable, List
 
-from agentic_parser.agents.base_agent import BaseAgent, AgentError
-from agentic_parser.llm.client import LLMClient, Message
-from agentic_parser.utils.types import ProcessedLogLine
+from agents.base_agent import BaseAgent, AgentError
+from llm.client import LLMClient, Message
+from utils.types import ProcessedLogLine
 
 
 @dataclass

@@ -6,7 +6,7 @@ import json
 import re
 from typing import Iterable, List, Optional
 
-from agentic_parser.llm.client import LLMClient, Message
+from llm.client import LLMClient, Message
 
 
 class AgentError(RuntimeError):
@@ -18,9 +18,9 @@ class BaseAgent:
         "Shared concepts:\n"
         "  • BUSINESS DATA (variables) are instance-specific values such as timestamps, user/device identifiers, "
         "IP/MAC addresses, counters, metrics, and JSON payloads. They come from unbounded domains and replacing "
-        "them does not change the semantic meaning of the event.\n"
+        "them does not change the semantic meaning of the event. It should not include multiple words.\n"
         "  • STRUCTURE (constants) are system-defined tokens such as event skeletons, log levels, module names, "
-        "protocol keywords, and syntactic separators (colons, brackets, pipes). They draw from finite sets and "
+        "protocol keywords, message sentences, and syntactic separators (colons, brackets, pipes). They draw from finite sets and "
         "altering them would change what the log entry represents.\n"
         "Always preserve STRUCTURE as literal text and capture only BUSINESS DATA."
     )

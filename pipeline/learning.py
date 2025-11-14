@@ -6,14 +6,14 @@ from dataclasses import dataclass
 import re
 from typing import Dict, List
 
-from agentic_parser.agents.base_agent import AgentError
-from agentic_parser.agents.template_agent import TemplateAgent
-from agentic_parser.agents.validation_agent import ValidationAgent
-from agentic_parser.agents.repair_agent import RepairAgent
-from agentic_parser.agents.update_agent import UpdateAgent
-from agentic_parser.knowledge.metrics import MetricsStore
-from agentic_parser.knowledge.template_store import TemplateLibrary, TemplateRecord
-from agentic_parser.utils.types import ProcessedLogLine
+from agents.base_agent import AgentError
+from agents.template_agent import TemplateAgent
+from agents.validation_agent import ValidationAgent
+from agents.repair_agent import RepairAgent
+from agents.update_agent import UpdateAgent
+from knowledge.metrics import MetricsStore
+from knowledge.template_store import TemplateLibrary, TemplateRecord
+from utils.types import ProcessedLogLine
 
 
 @dataclass

@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 from typing import Dict, Iterable, Optional, Tuple
 
-from agentic_parser.utils.types import ProcessedLogLine
+from utils.types import ProcessedLogLine
 
 
 @dataclass
@@ -78,6 +78,12 @@ class TemplateLibrary:
     def deactivate(self, template_id: str) -> None:
         if template_id in self.templates:
             self.templates[template_id].is_active = False
+
+    def prepare_for_matching(self) -> None:
+        """Ensures all templates have a compiled regex pattern in the cache."""
+        for template_id, record in self.templates.items():
+            if template_id not in self._compiled:
+                self._compiled[template_id] = re.compile(record.regex)
 
     def match(self, processed: ProcessedLogLine) -> Optional[Tuple[TemplateRecord, Dict[str, str]]]:
         for template_id, record in self.templates.items():

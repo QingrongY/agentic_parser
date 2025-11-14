@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import List
 
-from agentic_parser.agents.base_agent import BaseAgent
-from agentic_parser.llm.client import LLMClient, Message
+from agents.base_agent import BaseAgent
+from llm.client import LLMClient, Message
 
 
 class ErrorAgent(BaseAgent):

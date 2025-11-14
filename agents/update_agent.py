@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from agentic_parser.agents.base_agent import BaseAgent, AgentError
-from agentic_parser.interface.interaction_service import InteractionService
-from agentic_parser.llm.client import Message
-from agentic_parser.knowledge.template_store import TemplateRecord
-from agentic_parser.utils.types import ProcessedLogLine
+from agents.base_agent import BaseAgent, AgentError
+from interface.interaction_service import InteractionService
+from llm.client import Message
+from knowledge.template_store import TemplateRecord
+from utils.types import ProcessedLogLine
 
 
 class UpdateAgent(BaseAgent):

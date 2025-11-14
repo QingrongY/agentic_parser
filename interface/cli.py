@@ -6,14 +6,13 @@ import argparse
 from pathlib import Path
 import sys
 
-ROOT_DIR = Path(__file__).resolve().parents[3]
-PACKAGE_ROOT = ROOT_DIR / "tmp_project"
-if __package__ is None or __package__ == "":  # pragma: no cover - script mode
-    sys.path.append(str(PACKAGE_ROOT))
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.append(str(ROOT_DIR))
 
-from agentic_parser.interface.interaction_service import InteractionService
-from agentic_parser.llm.client import AIMLLLMClient
-from agentic_parser.pipeline.orchestrator import LogParsingOrchestrator
+from interface.interaction_service import InteractionService
+from llm.client import AIMLLLMClient
+from pipeline.orchestrator import LogParsingOrchestrator
 
 DEFAULTS = {
     "log_path": ROOT_DIR / "datasets/BGL/BGL_2k.log",

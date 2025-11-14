@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from agentic_parser.agents.base_agent import AgentError, BaseAgent
-from agentic_parser.agents.template_agent import TemplateAgent
-from agentic_parser.utils.types import ProcessedLogLine
+from agents.base_agent import AgentError, BaseAgent
+from agents.template_agent import TemplateAgent
+from utils.types import ProcessedLogLine
 
 
 class RepairAgent(BaseAgent):

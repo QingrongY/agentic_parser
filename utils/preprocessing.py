@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Iterable, List
 
-from agentic_parser.utils.types import ProcessedLogLine
+from utils.types import ProcessedLogLine
 
 
 _WHITESPACE = re.compile(r"\s+")

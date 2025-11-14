@@ -5,8 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, Iterable, List, Optional
 
-from agentic_parser.knowledge.template_store import TemplateLibrary
-from agentic_parser.utils.types import ProcessedLogLine
+from knowledge.template_store import TemplateLibrary
+from utils.types import ProcessedLogLine
 
 
 @dataclass

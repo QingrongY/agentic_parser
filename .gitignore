@@ -131,3 +131,5 @@ cython_debug/
 
 # Temporary files
 imports.txt
+state_v2/
+datasets/

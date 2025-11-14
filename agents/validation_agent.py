@@ -7,9 +7,9 @@ import re
 
 from typing import Iterable, List
 
-from agentic_parser.agents.base_agent import BaseAgent, AgentError
-from agentic_parser.llm.client import Message
-from agentic_parser.utils.types import ProcessedLogLine
+from agents.base_agent import BaseAgent, AgentError
+from llm.client import Message
+from utils.types import ProcessedLogLine
 
 
 @dataclass

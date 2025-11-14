@@ -7,23 +7,23 @@ import json
 from pathlib import Path
 from typing import Dict, List
 
-from agentic_parser.agents.base_agent import BaseAgent
-from agentic_parser.agents.error_agent import ErrorAgent
-from agentic_parser.agents.router_agent import RouterAgent
-from agentic_parser.agents.template_agent import TemplateAgent
-from agentic_parser.agents.validation_agent import ValidationAgent
-from agentic_parser.agents.repair_agent import RepairAgent
-from agentic_parser.agents.update_agent import UpdateAgent
-from agentic_parser.interface.interaction_service import InteractionService
-from agentic_parser.knowledge.metrics import MetricsStore
-from agentic_parser.knowledge.source_catalog import SourceCatalog, SourceDescriptor
-from agentic_parser.knowledge.template_store import TemplateStore
-from agentic_parser.llm.client import LLMClient
-from agentic_parser.pipeline.ingestion import read_lines
-from agentic_parser.pipeline.learning import LearningEngine
-from agentic_parser.pipeline.matching import match_all
-from agentic_parser.utils.preprocessing import normalize_many
-from agentic_parser.utils.types import ProcessedLogLine
+from agents.base_agent import BaseAgent
+from agents.error_agent import ErrorAgent
+from agents.router_agent import RouterAgent
+from agents.template_agent import TemplateAgent
+from agents.validation_agent import ValidationAgent
+from agents.repair_agent import RepairAgent
+from agents.update_agent import UpdateAgent
+from interface.interaction_service import InteractionService
+from knowledge.metrics import MetricsStore
+from knowledge.source_catalog import SourceCatalog, SourceDescriptor
+from knowledge.template_store import TemplateStore
+from llm.client import LLMClient
+from pipeline.ingestion import read_lines
+from pipeline.learning import LearningEngine
+from pipeline.matching import match_all
+from utils.preprocessing import normalize_many
+from utils.types import ProcessedLogLine
 
 
 @dataclass
@@ -90,6 +90,7 @@ class LogParsingOrchestrator:
         self.catalog.register(descriptor)
 
         library = self.template_store.library(descriptor.source_id)
+        library.prepare_for_matching()
         example_cache: Dict[str, ProcessedLogLine] = {}
         context = f"device={descriptor.device_type}, vendor={descriptor.vendor}"
 

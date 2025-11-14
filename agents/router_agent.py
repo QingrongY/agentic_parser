@@ -5,8 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Iterable
 
-from agentic_parser.agents.base_agent import BaseAgent, AgentError
-from agentic_parser.llm.client import Message
+from agents.base_agent import BaseAgent, AgentError
+from llm.client import Message
 
 
 @dataclass(frozen=True)
