@@ -1,0 +1,10 @@
+{
+  "server_generic": {
+    "source_id": "server_generic",
+    "device_type": "server",
+    "vendor": "generic",
+    "metadata": {
+      "reasoning": "The logs contain kernel and application-level information, including error messages and debugging information. The presence of 'RAS KERNEL INFO' and 'RAS APP FATAL' suggests a server-like system. The logs do not appear to be from a network device like a router, firewall, or switch."
+    }
+  }
+}

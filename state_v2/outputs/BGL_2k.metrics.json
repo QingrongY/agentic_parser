@@ -1,0 +1,9 @@
+{
+  "pipeline": {
+    "processed_lines": 2000,
+    "matched_lines": 2000,
+    "learned_templates": 0,
+    "escalations": 0
+  },
+  "tokens": {}
+}

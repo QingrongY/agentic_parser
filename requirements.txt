@@ -1,0 +1,4 @@
+chardet
+logparser
+pandas
+requests
